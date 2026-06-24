@@ -32,3 +32,5 @@ Thumbs.db
 
 # Hugging Face cache (if symlinked into repo)
 hf_cache/
+
+articles/
