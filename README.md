@@ -9,7 +9,7 @@ It comes with a detailed write-up (in **English** and **Turkish**) that explains
 | **Base model** | [`Qwen/Qwen2.5-1.5B-Instruct`](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct) |
 | **Dataset** | [`yahma/alpaca-cleaned`](https://huggingface.co/datasets/yahma/alpaca-cleaned) |
 | **Technique** | QLoRA (4-bit NF4) + LoRA via PEFT |
-| **Hardware** | Runs on a free Colab **T4 (16 GB)** |
+| **Hardware** | Runs on a free Colab **T4 (16 GB)** — training peaks at only **~6.2 GB VRAM** |
 
 ---
 
@@ -39,7 +39,7 @@ jupyter notebook notebooks/fine_tuning_quickstart.ipynb
 3. **Generates a baseline answer** (before fine-tuning) for comparison.
 4. **Formats the dataset** using the model's chat template.
 5. **Attaches LoRA adapters** with PEFT — trains less than 1% of the parameters.
-6. **Trains** with a memory-efficient setup (8-bit optimizer + gradient checkpointing).
+6. **Trains** with a memory-efficient setup (8-bit optimizer + gradient checkpointing) — peak usage is only **~6.2 GB VRAM**, so it fits the free T4 with lots of room to spare.
 7. **Generates again** (after fine-tuning) so you can see the difference.
 8. **Saves the adapter** and optionally **merges** it into a standalone model.
 
